@@ -1,0 +1,26 @@
+{% extends "base.twig" %}
+
+{% block content %}
+<main class="content">
+    <div class="container content_wrapper">
+        {% if left_sidebar %}
+            <aside class="content_sidebar">
+                {{ left_sidebar }}
+            </aside>
+        {% endif %}
+        <div class="content_body nav-{{ nav_type }}">
+            <h1 class="page-title">{{ title }}</h1>
+
+            <div class="posts grid">
+                {% for post in posts %}
+                    {% include 'teaser.twig' %}
+                {% endfor %}
+            </div>
+
+            {% if bottom_contact_form %}
+                {{ bottom_contact_form }}
+            {% endif %}
+        </div>
+    </div>
+</main>
+{% endblock %}

@@ -1,0 +1,43 @@
+{% extends "base.twig" %}
+
+{% block content %}
+    <main class="content">
+        <div class="container content_wrapper">
+            {% if left_sidebar %}
+                <aside class="content_sidebar">
+                    {{ left_sidebar }}
+                </aside>
+            {% endif %}
+            <article class="content_body">
+                {% if post.title %}
+                    <h1 class="post-title">{{ post.title }}</h1>
+                {% endif %}
+
+                <div class="grid video-grid">
+                {% for video in post.meta('videos') %}
+                    <section class="teaser grid-row">
+                        <div class="grid-column video teaser-poster">
+                            <a data-fancybox href="{{ video.video_url }}">
+                                {% if video.video_poster %}
+                                    <img src="{{ video.video_poster.url }}" alt="" class="video-poster">
+                                {% endif %}
+                                <i class="icofont-youtube-play video-icon"></i>
+                            </a>
+                        </div>
+                        <div class="grid-column teaser-info">
+                            <h3 class="video-title teaser-title"><a data-fancybox href="{{ video.video_url }}">{{ video.video_title }}</a></h3>
+                            <div class="video-address teaser-excerpt">{{ video.video_address }}</div>
+                            <div class="video-descriotion teaser-excerpt">{{ video.video_description }}</div>
+                        </div>
+                    </section>
+                {% endfor %}
+                </div>
+
+                {% if bottom_contact_form %}
+                    {{ bottom_contact_form  }}
+
+                {% endif %}
+            </article>
+        </div>
+    </main>
+{% endblock %}

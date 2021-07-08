@@ -1,0 +1,111 @@
+{% block html_head_container %}
+
+{% include 'html-header.twig' %}
+	{% block head %}
+	{% endblock %}
+	</head>
+{% endblock %}
+
+	<body class="{{body_class}}" data-template="base.twig">
+	<div class="wrapper">
+		<header class="header">
+			<div class="container header__container">
+				{{ fn('the_custom_logo') }}
+				<div class="header__navigation">
+					<div class="header__navigation__contacts">
+						<div class="header__navigation__facebook">
+							<a href="{{ header_facebook_link }}" target="_blank" id="header_facebook_link">
+								<i class="icofont-facebook"></i>
+							</a>
+						</div>
+						<div class="header__navigation__phone" id="header_phone_link">
+							<a href="tel://0800336165" class="header__navigation__phone__icon" id="header__navigation__phone">
+								<i class="icofont-phone"></i>
+							</a>
+							<a href="tel://0800336165" class="header__navigation__phone__text">
+								0 <span>(800)</span> 336-165<br>
+								Бесплатно <span>по</span> Украине
+							</a>
+						</div>
+						<button class="toggle-menu-mobile">
+							<i class="icofont-navigation-menu"></i>
+						</button>
+					</div>
+					<nav class="main-navigation">
+						<div class="header__navigation__menu">
+							{% include "menu.twig" with {'items': menu.get_items} %}
+						</div>
+
+
+					</nav>
+				</div>
+{#					<div class="header__navigation__contacts">#}
+{#						<div class="header_facebook">#}
+{#							<a href="https://facebook.com/domocomplect" target="_blank">#}
+{#								<i class="icofont-facebook"></i>#}
+{#							</a>#}
+{#						</div>#}
+{#						<div class="header_phone_number">#}
+{#							<a href="tel://0800336165" class="header_phone_number_icon">#}
+{#								<i class="icofont-phone"></i>#}
+{#							</a>#}
+{#							<a href="tel://0800336165" class="header_phone_number_text">#}
+{#								0 <span>(800)</span> 336-165<br>Бесплатно <span>по</span> Украине#}
+{#							</a>#}
+{#							#}{#						{{ header_phone_number }}#}
+{#						</div>#}
+
+{#					</div>#}
+
+
+
+{#					<div class="mobile-nav-overly"></div>#}
+{#				</div>#}
+			</div>
+		</header>
+		{% block content %}
+		<main class="content">
+			<div class="container content_wrapper">
+				{% if left_sidebar %}
+					<aside class="content_sidebar">
+						{{ left_sidebar }}
+					</aside>
+				{% endif %}
+				<article class="content_body">
+					{% if post.title %}
+					<h1 class="post-title">{{ post.title }}</h1>
+					{% endif %}
+					{{ post.content }}
+					{% if bottom_contact_form %}
+						{{ bottom_contact_form }}
+
+					{% endif %}
+				</article>
+			</div>
+
+		</main>
+		{% endblock %}
+		<div class="bottom-contact container">
+			<div class="bottom-contact-content">
+				<div class="bottom-contact-phone"><a href="tel:0800336165">0 <b>(800)</b> 336-165</a></div>
+				<div class="bottom-contact-text">Бесплатно <b>по</b> Украине</div>
+			</div>
+			<div class="bottom-contact-facebook">
+				<a target="_blank" href="https://www.facebook.com/domocomplect">
+					<i class="icofont-facebook"></i>
+				</a>
+			</div>
+		</div>
+		<footer class="footer">
+			<div class="container">
+				<aside class="footer__widgets">
+					{{ footer_sidebar }}
+				</aside>
+				<div class="copyrights">&copy;2014 Домокомплект</div>
+			</div>
+		</footer>
+	</div>
+		{{ function('wp_footer') }}
+
+	</body>
+</html>

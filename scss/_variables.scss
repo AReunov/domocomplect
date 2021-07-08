@@ -1,0 +1,14 @@
+$orange: #ffa800;
+$green: #b1c667;
+$grey: #9a9999;
+$contacts-grey: #858585;
+$medium-grey : #7d7d7d;
+$dark-grey: #484848;
+$text-main: #4b4b4b;
+
+$table-green: #f0fbe2;
+$table-light-green: #f7fff0;
+
+@mixin bordered {
+  border: 1px solid red;
+}

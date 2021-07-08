@@ -1,0 +1,226 @@
+@font-face {
+  font-family: 'HelveticaNeueCyr-Thin';
+  src: local("HelveticaNeueCyr-Thin"), url("../fonts/HelveticaNeueCyr-Thin.ttf"); }
+
+@font-face {
+  font-family: 'HelveticaNeueCyr-Bold';
+  src: local("HelveticaNeueCyr-Bold"), url("../fonts/HelveticaNeueCyr-Bold.otf"); }
+
+@font-face {
+  font-family: 'HelveticaNeueCyr-Roman';
+  src: local("HelveticaNeueCyr-Roman"), url("../fonts/HelveticaNeueCyr-Roman.otf"); }
+
+@font-face {
+  font-family: 'HelveticaNeueCyr-Light';
+  src: local("HelveticaNeueCyr-Light"), url("../fonts/HelveticaNeueCyr-Light.otf"); }
+
+body#tinymce.wp-editor,
+.content_body {
+  font-family: "HelveticaNeueCyr-Light"; }
+  body#tinymce.wp-editor h1.page-title,
+  body#tinymce.wp-editor h1.post-title,
+  .content_body h1.page-title,
+  .content_body h1.post-title {
+    color: #ffa800;
+    font-size: 1.875em;
+    font-weight: normal;
+    text-transform: uppercase;
+    margin-bottom: 20px; }
+  body#tinymce.wp-editor h3,
+  .content_body h3 {
+    color: #ffa800;
+    text-transform: uppercase;
+    text-align: center;
+    font-size: 1.3em;
+    font-weight: normal;
+    margin-bottom: 12px; }
+    body#tinymce.wp-editor h3:before,
+    .content_body h3:before {
+      content: '- '; }
+    body#tinymce.wp-editor h3:after,
+    .content_body h3:after {
+      content: ' -'; }
+  body#tinymce.wp-editor p,
+  .content_body p {
+    text-align: justify; }
+  body#tinymce.wp-editor p, body#tinymce.wp-editor ol, body#tinymce.wp-editor ul,
+  .content_body p,
+  .content_body ol,
+  .content_body ul {
+    margin-bottom: 18px; }
+  body#tinymce.wp-editor ul,
+  .content_body ul {
+    list-style: square; }
+  body#tinymce.wp-editor ol,
+  .content_body ol {
+    list-style: decimal; }
+  body#tinymce.wp-editor ul, body#tinymce.wp-editor ol,
+  .content_body ul,
+  .content_body ol {
+    padding-left: 40px; }
+  body#tinymce.wp-editor p, body#tinymce.wp-editor li,
+  .content_body p,
+  .content_body li {
+    color: #4b4b4b;
+    line-height: 1.5em; }
+  body#tinymce.wp-editor strong,
+  .content_body strong {
+    color: #ffa800;
+    font-weight: normal; }
+  body#tinymce.wp-editor a,
+  .content_body a {
+    color: #b1c667;
+    text-decoration: none; }
+    body#tinymce.wp-editor a:hover,
+    .content_body a:hover {
+      text-decoration: underline; }
+  body#tinymce.wp-editor img,
+  .content_body img {
+    max-width: 100%;
+    height: auto; }
+    body#tinymce.wp-editor img.alignleft,
+    .content_body img.alignleft {
+      display: inline;
+      float: left; }
+    body#tinymce.wp-editor img.alignright,
+    .content_body img.alignright {
+      display: inline;
+      float: right; }
+    body#tinymce.wp-editor img.aligncenter,
+    .content_body img.aligncenter {
+      display: block;
+      margin-right: auto;
+      margin-left: auto; }
+  body#tinymce.wp-editor .teaser h3:before, body#tinymce.wp-editor .teaser h3:after,
+  .content_body .teaser h3:before,
+  .content_body .teaser h3:after {
+    display: none; }
+  body#tinymce.wp-editor .teaser h3 a, body#tinymce.wp-editor .teaser h3 a:hover,
+  .content_body .teaser h3 a,
+  .content_body .teaser h3 a:hover {
+    text-decoration: none; }
+  body#tinymce.wp-editor sup,
+  .content_body sup {
+    vertical-align: super;
+    font-size: smaller; }
+  body#tinymce.wp-editor details,
+  .content_body details {
+    border: 1px solid #dadada;
+    margin-bottom: 18px; }
+    body#tinymce.wp-editor details summary,
+    .content_body details summary {
+      background-color: #b1c667;
+      color: white;
+      padding: 12px 16px;
+      cursor: pointer;
+      font-family: "HelveticaNeueCyr-Roman";
+      font-size: 1.1em;
+      line-height: 1.2;
+      text-transform: uppercase; }
+    body#tinymce.wp-editor details .details-content,
+    .content_body details .details-content {
+      padding: 1em; }
+    body#tinymce.wp-editor details .complect-heading,
+    .content_body details .complect-heading {
+      color: #b1c667;
+      text-align: center;
+      font-family: "HelveticaNeueCyr-Light";
+      font-size: 1.375em;
+      text-transform: uppercase;
+      margin-bottom: 18px;
+      margin-top: 18px; }
+  body#tinymce.wp-editor details[open] summary ~ *,
+  .content_body details[open] summary ~ * {
+    animation: sweep .5s ease-in-out; }
+
+@keyframes sweep {
+  0% {
+    opacity: 0;
+    margin-left: -10px; }
+  100% {
+    opacity: 1;
+    margin-left: 0px; } }
+  body#tinymce.wp-editor .table-scroll,
+  .content_body .table-scroll {
+    position: relative;
+    overflow: hidden;
+    width: 100%; }
+    body#tinymce.wp-editor .table-scroll-wrapper,
+    .content_body .table-scroll-wrapper {
+      max-width: 100%; }
+    body#tinymce.wp-editor .table-scroll .table-wrap,
+    .content_body .table-scroll .table-wrap {
+      width: 100%;
+      overflow: hidden;
+      overflow-x: auto; }
+      body#tinymce.wp-editor .table-scroll .table-wrap table th, body#tinymce.wp-editor .table-scroll .table-wrap table td,
+      .content_body .table-scroll .table-wrap table th,
+      .content_body .table-scroll .table-wrap table td {
+        border: 1px solid #e3e2e2; }
+    body#tinymce.wp-editor .table-scroll thead::-webkit-scrollbar,
+    body#tinymce.wp-editor .table-scroll thead::-webkit-scrollbar-track,
+    .content_body .table-scroll thead::-webkit-scrollbar,
+    .content_body .table-scroll thead::-webkit-scrollbar-track {
+      display: none; }
+    body#tinymce.wp-editor .table-scroll table,
+    .content_body .table-scroll table {
+      width: 100%;
+      border-collapse: collapse; }
+    body#tinymce.wp-editor .table-scroll .table-clone,
+    .content_body .table-scroll .table-clone {
+      position: absolute;
+      top: 0;
+      left: 0;
+      pointer-events: none;
+      z-index: 1000; }
+      body#tinymce.wp-editor .table-scroll .table-clone td, body#tinymce.wp-editor .table-scroll .table-clone th,
+      .content_body .table-scroll .table-clone td,
+      .content_body .table-scroll .table-clone th {
+        visibility: hidden;
+        border: 1px solid transparent; }
+      body#tinymce.wp-editor .table-scroll .table-clone .col-fixed,
+      .content_body .table-scroll .table-clone .col-fixed {
+        border: 1px solid #e3e2e2;
+        visibility: visible; }
+      body#tinymce.wp-editor .table-scroll .table-clone thead tr,
+      body#tinymce.wp-editor .table-scroll .table-clone tr:nth-child(even),
+      .content_body .table-scroll .table-clone thead tr,
+      .content_body .table-scroll .table-clone tr:nth-child(even) {
+        background-color: #f9f9f8; }
+      body#tinymce.wp-editor .table-scroll .table-clone tbody tr:nth-child(odd),
+      .content_body .table-scroll .table-clone tbody tr:nth-child(odd) {
+        background-color: white; }
+    body#tinymce.wp-editor .table-scroll table:not(.table-clone) .col-fixed,
+    .content_body .table-scroll table:not(.table-clone) .col-fixed {
+      visibility: hidden; }
+    body#tinymce.wp-editor .table-scroll tr td:first-child,
+    .content_body .table-scroll tr td:first-child {
+      font-weight: bold; }
+    body#tinymce.wp-editor .table-scroll thead tr,
+    body#tinymce.wp-editor .table-scroll tr:nth-child(even),
+    .content_body .table-scroll thead tr,
+    .content_body .table-scroll tr:nth-child(even) {
+      background-color: #f9f9f8; }
+    body#tinymce.wp-editor .table-scroll tbody tr:nth-child(even) td:nth-child(2),
+    .content_body .table-scroll tbody tr:nth-child(even) td:nth-child(2) {
+      background-color: #f0fbe2; }
+    body#tinymce.wp-editor .table-scroll tbody tr:nth-child(odd) td:nth-child(2),
+    .content_body .table-scroll tbody tr:nth-child(odd) td:nth-child(2) {
+      background-color: #f7fff0; }
+    body#tinymce.wp-editor .table-scroll th, body#tinymce.wp-editor .table-scroll td,
+    .content_body .table-scroll th,
+    .content_body .table-scroll td {
+      color: #4b4b4b;
+      font-size: 14px;
+      line-height: 16px;
+      padding: 8px;
+      vertical-align: middle; }
+  body#tinymce.wp-editor img.swipe-icon,
+  .content_body img.swipe-icon {
+    display: none; }
+    @media (max-width: 1023px) {
+      body#tinymce.wp-editor img.swipe-icon,
+      .content_body img.swipe-icon {
+        display: block;
+        height: 50px;
+        margin-bottom: 12px; } }

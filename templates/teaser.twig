@@ -1,0 +1,18 @@
+<article class="teaser post-{{ post.ID }} grid-row">
+    <div class="grid-column teaser-poster">
+        <a href="{{ post.link }}">
+            <img src="{{ post.thumbnail.src | resize(332,332)}}" alt="">
+        </a>
+    </div>
+    <div class="grid-column teaser-info">
+        <time class="teaser-date">{{ post.date }}</time>
+        <h3 class="teaser-title">
+            <a href="{{ post.link }}">
+                {{ post.title }}
+            </a>
+        </h3>
+        <div class="teaser-excerpt">
+            {{ post.post_excerpt }}
+        </div>
+    </div>
+</article>

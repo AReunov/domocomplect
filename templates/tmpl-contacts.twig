@@ -1,0 +1,100 @@
+{% extends "base.twig" %}
+
+{% block content %}
+    <main class="content">
+        <div class="container content_wrapper">
+            <section class="content_body">
+{#                {% if post.title %}#}
+{#                    <h1 class="post-title">{{ post.title }}</h1>#}
+{#                {% endif %}#}
+
+                {% if bottom_contact_form %}
+                    {{ bottom_contact_form  }}
+                {% endif %}
+
+            </section>
+        </div>
+        {% if address %}
+            <div class="contacts-map" style="height: 400px;">
+                <div class="map-canvas" style="height: 400px;"></div>
+            </div>
+            <script type="application/javascript">
+                function initMap() {
+                    jQuery('.contacts-map').each(function() {
+                        var myLatLng = new google.maps.LatLng({{ address.lat }}, {{ address.lng }});
+                        var mapOptions = {
+                            zoom: 17,
+                            scrollwheel: false,
+                            center: myLatLng,
+                            mapTypeId: google.maps.MapTypeId.ROADMAP,
+                            styles: [{stylers: [{ saturation: -100 }]}]
+                        };
+                        var map = new google.maps.Map(jQuery(this).find('.map-canvas')[0], mapOptions);
+                        var icon = {
+                            url: '{{ theme.uri }}/img/map-icon.png',
+                            size: new google.maps.Size(48, 68),
+                            origin: new google.maps.Point(0,0),
+                            anchor: new google.maps.Point(24, 63)
+                        };
+                        var marker = new google.maps.Marker({
+                            position: myLatLng,
+                            map: map,
+                            icon: icon,
+                            title: 'Домокомплект'
+                        });
+                    });
+                }
+
+                initMap();
+            </script>
+        {% endif %}
+        <div class="container">
+            <section class="branches content_wrapper">
+                {% for branch in post.meta('branches') %}
+                    <div class="branch content_body">
+                        <h4>{{ branch.title }}</h4>
+                        {% if branch.address %}
+                            <div class="address"><i class="icofont-google-map"></i> {{ branch.address }}</div>
+                        {% endif %}
+                        {% if branch.phone %}
+                            <div class="phone"><i class="icofont-phone"></i> {{ branch.phone }}</div>
+                        {% endif %}
+                        {% if branch.email %}
+                            <div class="email">
+                                <a href="mailto:{{ branch.email }}">
+                                    <i class="icofont-envelope"></i> {{ branch.email }}
+                                </a>
+                            </div>
+                        {% endif %}
+                    </div>
+                {% endfor %}
+            </section>
+            <section class="departments content_wrapper">
+                {% for dep in post.meta('departments') %}
+                    <div class="department content_body">
+                        <h4>{{ dep.title }}</h4>
+                        {% if dep.address %}
+                            <div class="address"><i class="icofont-google-map"></i> {{ dep.address }}</div>
+                        {% endif %}
+                        {% if dep.phone %}
+                            <div class="phone"><i class="icofont-phone"></i> {{ dep.phone }}</div>
+                        {% endif %}
+                        {% if dep.email %}
+                            <div class="email">
+                                <a href="mailto:{{ dep.email }}">
+                                    <i class="icofont-envelope"></i> {{ dep.email }}
+                                </a>
+                            </div>
+                        {% endif %}
+                    </div>
+                {% endfor %}
+            </section>
+            <section class="schedule content_wrapper">
+                <div class="content_body">
+                    <h4>{{ post.meta('schedule').title }}</h4>
+                    <div>{{ post.meta('schedule').text }}</div>
+                </div>
+            </section>
+        </div>
+    </main>
+{% endblock %}

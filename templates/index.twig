@@ -1,0 +1,23 @@
+{% extends "base.twig" %}
+
+{% block content %}
+    <main class="content">
+        <div class="container content_wrapper">
+            {% if left_sidebar %}
+                <aside class="content_sidebar">
+                    {{ left_sidebar }}
+                </aside>
+            {% endif %}
+            <article class="content_body">
+                {% if post.title %}
+                    <h1 class="post-title">{{ post.title }}</h1>
+                {% endif %}
+                {{ post.content }}
+                {% if bottom_contact_form %}
+                    {{ bottom_contact_form }}
+
+                {% endif %}
+            </article>
+        </div>
+    </main>
+{% endblock %}

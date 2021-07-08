@@ -1,0 +1,65 @@
+{% extends "base.twig" %}
+
+{% block content %}
+    <main class="content content-home">
+
+        <section class="home-slider">
+            {% for slide in post.meta("slider") %}
+                <div class="slide">
+                    <a href="{{ slide.link }}">
+                        <img src="{{ slide.image.url }}" alt="">
+                    </a>
+                </div>
+            {% endfor %}
+        </section>
+        <section class="container main-links">
+            {% for block in post.meta('blocks') %}
+                <div class="link-block">
+                    <div class="poster">
+                        <a href="{{ block.link.url }}">
+                            <img src="{{ block.image.url | resize(331, 251)}}" alt="">
+                            <i class="icofont-hand-drag1"></i>
+                        </a>
+                    </div>
+                    <h3>
+                        <a href="{{ block.link.url }}">
+                            {{ block.title }}
+                        </a>
+                    </h3>
+                    <p class="description">
+                        {{ block.description }}
+                    </p>
+                </div>
+            {% endfor %}
+        </section>
+
+        <section class="callback-banner content_body">
+            <div class="container callback-banner-columns">
+                <div class="callback-banner-column">
+                    <h4>{{ banner.heading }}</h4>
+                    <h5>{{ banner.subheading }}</h5>
+                    <svg width="110" height="25" viewBox="0 0 110 25" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M0.5 0.5L55 24.5L109.5 0.5" stroke="#9E9E9E"/>
+                    </svg>
+                    <p class="callback-banner-text">{{ banner.text }}</p>
+                </div>
+                <div class="callback-banner-column">
+                    <button
+                            data-fancybox
+                            data-src="#request-form"
+                            class="request button">
+                        <i class="icofont-phone-circle"></i> {{ banner.cta_text }}
+                    </button>
+                </div>
+            </div>
+            <div class="hidden">
+                <div id="request-form">
+                    {{ fn('do_shortcode','[contact-form-7 id='~form~']') }}
+                </div>
+            </div>
+        </section>
+{#        <div class="container content_wrapper">#}
+{#        </div>#}
+
+    </main>
+{% endblock %}

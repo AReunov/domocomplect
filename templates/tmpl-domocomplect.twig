@@ -1,0 +1,37 @@
+{% extends "base.twig" %}
+
+{% block content %}
+    <main class="content">
+        <div class="container content_wrapper">
+            {% if left_sidebar %}
+                <aside class="content_sidebar">
+                    {{ left_sidebar }}
+                </aside>
+            {% endif %}
+            <article class="content_body">
+                {% if post.title %}
+                    <h1 class="post-title">{{ post.title }}</h1>
+                {% endif %}
+                {{ post.content }}
+
+                {% for complect in complects %}
+                    <section class="complect">
+                        <details>
+                            <summary class="complect-title">{{ complect.complect_title }}<wbr> &mdash; {{ __("от") }} {{ complect.complect_price }} <wbr>{{ __("за&nbsp;1&nbsp;m<sup>2</sup>") }}</summary>
+                            <div class="details-content">
+                                <h4 class="complect-heading">{{ __("Домокомплект") }} &laquo;{{ complect.complect_title }}&raquo; &mdash; {{ __("от") }} {{ complect.complect_price }} {{ __("за 1 m<sup>2</sup>") }}</h4>
+                                {{ complect.complect_description }}
+                            </div>
+                        </details>
+                    </section>
+                {% endfor %}
+
+
+                {% if bottom_contact_form %}
+                    {{ bottom_contact_form  }}
+
+                {% endif %}
+            </article>
+        </div>
+    </main>
+{% endblock %}

@@ -1,0 +1,36 @@
+{% extends "base.twig" %}
+
+{% block content %}
+    <main class="content">
+        <div class="container content_wrapper">
+            <article class="content_body">
+
+                <div class="business-wrapper">
+                    <div class="business-grid">
+                        {% for subpage in post.meta('pages') %}
+                            {% set image = Image(subpage.page_link.main_icon) %}
+                            {% set imageAlt = Image(subpage.page_link.hover_icon) %}
+
+                            <div class="business-grid-item">
+                                <a class="business-grid-item__icon" href="{{ subpage.page_link.link }}">
+                                    <img class="item-icon-normal" src="{{ image.src }}" alt="">
+                                    <img class="item-icon-active" src="{{ imageAlt.src }}" alt="">
+                                </a>
+                                <a href="{{ subpage.page_link.link }}" class="business-grid-item__title">
+                                    {{ subpage.page_link.post_title }}
+                                </a>
+
+                            </div>
+
+                        {% endfor %}
+                    </div>
+                </div>
+
+                {% if bottom_contact_form %}
+                    {{ bottom_contact_form }}
+
+                {% endif %}
+            </article>
+        </div>
+    </main>
+{% endblock %}

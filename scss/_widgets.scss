@@ -1,0 +1,77 @@
+.content_sidebar {
+  padding-right: 30px;
+}
+.widget {
+  .wpcf7 {
+    .ajax-loader {
+      margin: 0 auto;
+      left: 50%;
+      transform: translateX(-50%);
+      margin-top: 12px;
+    }
+    * {
+      box-sizing: border-box;
+      max-width: 100%;
+    }
+    h3 {
+      color: $medium-grey;
+      text-transform: uppercase;
+      font-size: 3em;
+      text-align: center;
+    }
+    h4 {
+      color: $orange;
+      text-transform: uppercase;
+      font-size: 1.5em;
+      text-align: center;
+    }
+    p {
+      margin: 10px 0;
+    }
+    input {
+      max-width: 100%;
+    }
+  }
+
+  &-catalog {
+    .widget-title {
+      background-color: $grey;
+      color: white;
+      text-transform: uppercase;
+      text-align: center;
+      line-height: 2.5em;
+      height: 2.5em;
+      font-size: 1.25em;
+      a {
+        text-decoration: none;
+        color: white;
+      }
+    }
+    .projects_slider{
+      img {
+        max-width: 100%;
+      }
+    }
+    .slick-dots {
+      bottom: -35px;
+      li {
+        button:before{
+          content: '';
+          background-color: #666;
+          width: 10px;
+          height: 10px;
+          display: block;
+          opacity: 1;
+          transition: background-color .3s ease;
+        }
+        &.slick-active {
+          button:before{
+            background-color: $orange;
+            opacity: 1;
+          }
+        }
+      }
+
+    }
+  }
+}

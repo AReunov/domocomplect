@@ -1,0 +1,124 @@
+input[type=tel],
+input[type=email],
+input[type=text]{
+  border: 1px solid $grey;
+  font-size: 1.25em;
+  padding: 10px;
+  margin: 8px 0;
+  border-radius: 3px;
+  max-width: 450px;
+  width: 100%;
+
+  &:focus {
+    outline: none;
+    border: 1px solid $dark-grey;
+  }
+}
+textarea.wpcf7-textarea {
+  border: 1px solid $grey;
+  padding: 10px;
+  margin: 8px 0;
+  font-size: 1.25em;
+  border-radius: 3px;
+  max-width: 450px;
+  width: 100%;
+}
+.wpcf7-submit {
+  border: none;
+  font-size: 1.25em;
+  text-transform: uppercase;
+  padding: 16px 24px;
+  background-color: $green;
+  color: white;
+  cursor: pointer;
+  margin: 0 auto;
+  display: block;
+  transition: background-color 0.4s ease-out;
+
+  &.callback-request-button:before {
+    content: "234";
+    display: inline-block;
+    width: 10px;
+    height: 10px;
+    border: 3px solid red;
+  }
+
+  &:hover {
+    background-color: black;
+    color: white;
+  }
+}
+
+.wpcf7-response-output,
+.wpcf7-not-valid-tip {
+  font-size: .9em !important;
+  max-width: 420px;
+}
+
+.wpcf7 form.invalid .wpcf7-response-output,
+.wpcf7 form.unaccepted .wpcf7-response-output{
+  border-width: 1px;
+  border-style: dashed;
+}
+
+.wpcf7 form .wpcf7-response-output {
+  margin: 1.3em 0.5em .8em !important;
+}
+
+.wpcf7-form {
+  h3 {
+    font-size: 2.9em;
+    text-transform: uppercase;
+    text-align: center;
+    color: $medium-grey;
+  }
+
+  h4 {
+    font-size: 2.9em;
+    text-transform: uppercase;
+    text-align: center;
+    color: $medium-grey;
+  }
+  h5 {
+    font-size: 1.6em;
+    text-transform: uppercase;
+    text-align: center;
+    color: $orange;
+  }
+
+  span.subheader {
+    color: $orange;
+    font-size: 1.45em;
+    text-transform: uppercase;
+    text-align: center;
+    width: 100%;
+    display: inline-block;
+  }
+  i.icofont-phone-circle {
+    margin: 0 auto 8px;
+    display: block;
+    font-size: 3.5rem;
+    text-align: center;
+    color: #CECECE;
+  }
+}
+
+.content_body {
+  .wpcf7-form{
+    margin-top: 1.5em;
+    text-align: center;
+    p {
+      text-align: center;
+    }
+
+  }
+}
+
+.fancybox-content .wpcf7-submit {
+  background-color: $orange;
+  margin-top: 24px;
+  
+  &:hover {
+    background-color: #000;
+  }
+}
